@@ -1,0 +1,86 @@
+
+.form-column {
+    display: grid; /* Change from flex to grid */
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    gap: 16px; /* Add gap between columns */
+    width: 700px;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 4px;
+  }
+  
+  .form-field {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+  }
+  
+  .icon {
+    margin-right: 8px;
+    color: #8b8a8a;
+  }
+  
+  .input-container {
+    flex: 1;
+    display: flex; /* Add display flex to align icon and input */
+    align-items: center; /* Center align icon and input vertically */
+    border: none;
+
+  }
+  
+  .input-field {
+    flex: 1;
+    border: none;
+    width: 250px;
+  }
+
+  .submit-button {
+    display: inline-flex;
+    justify-content: flex-start;
+  }
+  
+ .adress-notes {
+    display: grid;
+    grid-column: span 2;
+    
+ }
+
+/* 
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-column {
+    flex: 1;
+    padding: 0 16px;
+    margin: auto 0;
+  }
+  
+  .form-field {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+  }
+  
+  .icon {
+    margin-right: 8px;
+  }
+  
+  .input-field {
+    flex: 1;
+    border: none;
+  }
+
+
+  
+  .form-actions {
+    margin-top: 16px;
+    text-align: right;
+  }
+   */
