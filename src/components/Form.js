@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import IconButton from '@mui/material/IconButton';
-import SendIcon from '@mui/icons-material/Send';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CakeIcon from '@mui/icons-material/Cake';
 import TranslateIcon from '@mui/icons-material/Translate';
@@ -14,6 +12,7 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
 
 import '../form.css'
+
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -59,20 +58,28 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
+        <div className="patients-info">
+            <h1>Referral Patients</h1>
+            <h2>You can add up to five patients a a time</h2>
+        </div>
      <div className="form-column">
-
+     <div className="patient-number">
+            <h1>1</h1>
+            <h2>New Referral</h2>
+        </div>
      <div className="form-field">
           <div className="input-container">
             <AccountCircleIcon className="icon" />
             <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={handleInputChange}
-              required
-              className="input-field"
-            />
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleInputChange}
+                required
+                className="input-field"
+                />
+
           </div>
         </div>
 
@@ -96,7 +103,8 @@ const Form = () => {
         <CakeIcon className="icon" />
             <input
                 name="dateOfBirth"
-                type="date"
+                type="number"
+                placeholder="Date of birth"
                 value={formData.dateOfBirth}
                 onChange={handleInputChange}
                 fullWidth
@@ -128,7 +136,7 @@ const Form = () => {
         <input
             type="number"
             name="phone"
-            placeholder="Phone number"
+            placeholder="Phone"
             value={formData.phone}
             onChange={handleInputChange}
             fullWidth
@@ -192,22 +200,6 @@ const Form = () => {
       </div>
 
 
-      {/* <div className="form-field">
-      <div className="input-container">
-        <HomeIcon className="icon" />
-        <input
-            type="text"
-            name="address"
-            placeholder="Address"
-            value={formData.address}
-            onChange={handleInputChange}
-            fullWidth
-            required
-            className="input-field"
-            />
-        </div>
-      </div> */}
-
         <div className="form-field">
         <div className="input-container">
             <TextSnippetIcon className="icon" />
@@ -216,7 +208,7 @@ const Form = () => {
             name="notes"
             placeholder="Notes/Reason"
             multiline
-            rows={4}
+            rows={10}
             value={formData.notes}
             onChange={handleInputChange}
             fullWidth
@@ -224,12 +216,16 @@ const Form = () => {
         />
         </div>
       </div>
-      <IconButton type="submit" className="submit-button">
-        <SendIcon />
-      </IconButton>
-      </div>
-
      
+      </div>
+        
+     
+      </div>
+      <div className="new-patient">
+        <h4>+ ADD ANOTHER PATIENT</h4>
+      </div>
+      <div className="submit-button" onClick={handleSubmit}>
+        SEND REFERRALS
       </div>
     </form>
   

@@ -1,10 +1,11 @@
 import React from "react";
+import '../header.css'
 
 const Header = () => {
     return (
         <div className="Header">
-            <h1>Referral Patients</h1>
-            <h2>You can add up to five patients a a time</h2>
+            <h1 className="header-title">Patient Referral Form</h1>
+            <h2>Hayes Valley Health San Francisco</h2>
         </div>
     )
 

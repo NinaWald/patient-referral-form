@@ -3,23 +3,73 @@
     display: grid; /* Change from flex to grid */
     grid-template-columns: 1fr 1fr; /* Two equal-width columns */
     gap: 16px; /* Add gap between columns */
-    width: 700px;
-    padding: 30px;
+    width: 782px;
+   padding-bottom: 20px;
     margin: 0 auto;
     background-color: white;
     border-radius: 4px;
+    
   }
+
+  /* Style the "*" character within the placeholder */
+.asterisk {
+    color: #F37021; /* Change the color to #F37021 */
+  }
+  
+  
+  
+
+  .patients-info {
+    color: #0B2B5B;
+    font-size: 10px;
+    padding: 40px;
+  }
+
+  .patient-number {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left within the row */
+    align-items: center; /* Vertically center items in the row */
+    grid-column: span 2; /* Span 2 columns in the grid */
+  }
+  
+  .patient-number h1 {
+    font-size: 26px; /* Adjust the font size as needed */
+    margin: 0;
+    background-color: #25A575;
+    color: white;
+    width: 40px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+  }
+  
+  .patient-number h2 {
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-left: 20px;
+    color: #3A719B;
+  }
+  
   
   .form-field {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ccc;
     padding: 8px 0;
+    margin-left: 20px;
+    margin-right: 20px;
+   
+  
+  }
+
+  .form-field, ::placeholder {
+    color: #3A719B;
   }
   
   .icon {
     margin-right: 8px;
-    color: #8b8a8a;
+    color:  #B8C7CC;
   }
   
   .input-container {
@@ -27,6 +77,8 @@
     display: flex; /* Add display flex to align icon and input */
     align-items: center; /* Center align icon and input vertically */
     border: none;
+    padding: 5px;
+    
 
   }
   
@@ -34,17 +86,42 @@
     flex: 1;
     border: none;
     width: 250px;
+    color:  #3A719B;
+   
   }
 
   .submit-button {
-    display: inline-flex;
-    justify-content: flex-start;
+    width: 782px;
+    height: 48px;
+    border-radius: 34.5px;
+    background: #0B2B5B;
+    color: #FFFFFF; /* Text color */
+    font-size: 18px; /* Adjust font size as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer; /* Add pointer cursor on hover */
   }
+
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
   
  .adress-notes {
     display: grid;
     grid-column: span 2;
+    gap: 16px;
     
+ }
+
+ .new-patient {
+    color: #0B2B5B;
  }
 
 /* 
