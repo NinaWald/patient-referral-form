@@ -107,7 +107,6 @@ const Form = () => {
                 placeholder="Date of birth"
                 value={formData.dateOfBirth}
                 onChange={handleInputChange}
-                fullWidth
                 required
                 className="input-field"
             />
@@ -123,7 +122,6 @@ const Form = () => {
             placeholder="Contact language"
             value={formData.contactLanguage}
             onChange={handleInputChange}
-            fullWidth
             required
             className="input-field"
         />
@@ -139,7 +137,6 @@ const Form = () => {
             placeholder="Phone"
             value={formData.phone}
             onChange={handleInputChange}
-            fullWidth
             required
             className="input-field"
         />
@@ -161,8 +158,11 @@ const Form = () => {
           </div>
         </div>
 
+        <div>
+  {/* {console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)} Move it here */}
+</div>
         <div className="adress-notes">
-
+ 
         <div className="form-field">
       <div className="input-container">
         <HomeIcon className="icon" />
@@ -170,8 +170,8 @@ const Form = () => {
             value={formData.address}
             onChange={(address) => setFormData({ ...formData, address })}
             onSelect={handleAddressSelect}
-            googleCallbackName="initMap" // Add this line
-            googleMapsApiKey='AIzaSyCvS-q861rtmBtpbmYfW7pAK-slA3aYkak' // Use your API key here
+            googleCallbackName="initMap"
+  
             >
             {({ getInputProps, suggestions, getSuggestionItemProps }) => (
                 <div>
@@ -182,6 +182,7 @@ const Form = () => {
                     required: true,
                     })}
                 />
+
                 <div>
                     {suggestions.map((suggestion, index) => (
                     <div
@@ -191,6 +192,7 @@ const Form = () => {
                     >
                         {suggestion.description}
                     </div>
+                    
                     ))}
                 </div>
                 </div>
@@ -211,7 +213,6 @@ const Form = () => {
             rows={10}
             value={formData.notes}
             onChange={handleInputChange}
-            fullWidth
             className="input-field"
         />
         </div>

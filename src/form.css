@@ -11,13 +11,6 @@
     
   }
 
-  /* Style the "*" character within the placeholder */
-.asterisk {
-    color: #F37021; /* Change the color to #F37021 */
-  }
-  
-  
-  
 
   .patients-info {
     color: #0B2B5B;
@@ -123,6 +116,7 @@
  .new-patient {
     color: #0B2B5B;
  }
+
 
 /* 
 .form-container {
