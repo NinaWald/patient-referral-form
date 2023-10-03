@@ -4,11 +4,11 @@
     grid-template-columns: 1fr 1fr; /* Two equal-width columns */
     gap: 16px; /* Add gap between columns */
     width: 782px;
-   padding-bottom: 20px;
+    padding-bottom: 20px;
     margin: 0 auto;
     background-color: white;
     border-radius: 4px;
-    
+    margin-bottom: 20px;
   }
 
 
@@ -115,43 +115,47 @@
 
  .new-patient {
     color: #0B2B5B;
+    cursor: pointer;
  }
 
+ .saved-forms {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 782px;
+  margin: 5px;
+  
+ }
 
-/* 
-.form-container {
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-    margin: 0 auto;
-  }
-  
-  .form-column {
-    flex: 1;
-    padding: 0 16px;
-    margin: auto 0;
-  }
-  
-  .form-field {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 8px 0;
-  }
-  
-  .icon {
-    margin-right: 8px;
-  }
-  
-  .input-field {
-    flex: 1;
-    border: none;
-  }
+ .saved-form.closed {
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 4px;
+ }
 
+ .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
 
-  
-  .form-actions {
-    margin-top: 16px;
-    text-align: right;
-  }
-   */
+ /* Add specific background colors for patient numbers */
+.saved-form.closed:nth-child(1) .patient-number h1 {
+  background-color: #25A575; /* Number 1 */
+}
+
+.saved-form.closed:nth-child(2) .patient-number h1 {
+  background-color: #2595A5; /* Number 2 */
+}
+
+.saved-form.closed:nth-child(3) .patient-number h1 {
+  background-color: #3A719B; /* Number 3 */
+}
+
+.saved-form.closed:nth-child(4) .patient-number h1 {
+  background-color: #254B7A; /* Number 4 */
+}
+
+.saved-form.closed:nth-child(5) .patient-number h1 {
+  background-color: #142B58; /* Number 5 */
+}
+
