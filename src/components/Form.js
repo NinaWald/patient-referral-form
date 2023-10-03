@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import PatientForm from './PatientForm';
+import DeleteIcon from '@mui/icons-material/Delete';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import '../form.css';
 
@@ -91,6 +94,7 @@ const Form = () => {
               <div className="patient-number">
                 <h1>{index + 1}</h1>
                 <h2>{`${patient.firstName} ${patient.lastName}`}</h2>
+                <DeleteIcon className="icon-delete" />
               </div>
             )}
           </div>
