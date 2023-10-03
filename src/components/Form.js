@@ -4,7 +4,7 @@ import PatientForm from './PatientForm';
 import '../form.css';
 
 const Form = () => {
-  // Initialize the state for patients and form data
+  // Initialize the state using React hooks useState for patients and form data
   const [patients, setPatients] = useState([]);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -39,7 +39,7 @@ const Form = () => {
     const updatedPatients = [...patients, { ...formData }];
     setPatients(updatedPatients);
 
-    // Clear the form data, except for the first and last names
+    // Clear the form data
     setFormData({
       firstName: '',
       lastName: '',
