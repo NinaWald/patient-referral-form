@@ -37,6 +37,7 @@ const Form = () => {
   };
 
   const handleSubmit = (event) => {
+    // the page doesn't reload after you submit the form 
     event.preventDefault();
     // Clone the current formData and add it to the patients list
     const updatedPatients = [...patients, { ...formData }];
