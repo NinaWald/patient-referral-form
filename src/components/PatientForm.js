@@ -10,10 +10,24 @@ import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import '../form.css'
 
 const PatientForm = ({ formData, handleInputChange, patientNumber, patientName }) => {
+
+  // Mapping of patient numbers to background colors
+  const backgroundColors = {
+    1: '#25A575',
+    2: '#2595A5',
+    3: '#3A719B',
+    4: '#254B7A',
+    5: '#142B58',
+  };
+
+ // Determine the background color based on the patient number
+ const backgroundColor = backgroundColors[patientNumber] || '#25A575'; // Default to the first color
+
+
     return (
-        <div className="form-column">
+      <div className="form-column">
         <div className="patient-number">
-               <h1>{patientNumber}</h1>
+                <h1 style={{ backgroundColor }}>{patientNumber}</h1>
                <h2>{patientName}</h2>
            </div>
         <div className="form-field">
@@ -116,7 +130,7 @@ const PatientForm = ({ formData, handleInputChange, patientNumber, patientName }
           <HomeIcon className="icon" />
           <input
             type="text"
-            name="address" // Name should be "address" to match formData
+            name="address"
             placeholder="Address"
             value={formData.address}
             onChange={handleInputChange}
@@ -129,16 +143,15 @@ const PatientForm = ({ formData, handleInputChange, patientNumber, patientName }
            <div className="form-field">
            <div className="input-container">
                <TextSnippetIcon className="icon" />
-           <input
-               type="text"
-               name="notes"
-               placeholder="Notes/Reason"
-               multiline
-               rows={10}
-               value={formData.notes}
-               onChange={handleInputChange}
-               className="input-field"
-           />
+          <input
+              name="notes"
+              placeholder="Notes/Reason"
+              rows={10}
+              value={formData.notes}
+              onChange={handleInputChange}
+              className="input-field"
+          />
+
            </div>
          </div>
         

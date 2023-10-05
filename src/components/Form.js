@@ -19,6 +19,7 @@ const Form = () => {
     address: '',
     notes: '',
   });
+  
 
   // Initialize patientNumber and patientName state
   const [patientNumber, setPatientNumber] = useState(1);
@@ -110,7 +111,7 @@ const Form = () => {
             patientName={patientName}     // Pass patientName to the form
           />
           <div className="new-patient" onClick={handleSubmit}>
-            <h4>+ ADD ANOTHER PATIENT</h4>
+            <h4>+ ADD PATIENT</h4>
           </div>
           <div className="submit-button">SEND REFERRALS</div>
         </form>
