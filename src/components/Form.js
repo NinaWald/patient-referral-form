@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PatientForm from './PatientForm';
 import DeleteIcon from '@mui/icons-material/Delete';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import '../form.css';
 
@@ -95,8 +95,17 @@ const Form = () => {
               // Display closed form with patient number and name
               <div className="patient-number">
                 <h1>{index + 1}</h1>
-                <h2>{`${patient.firstName} ${patient.lastName}`}</h2>
-                <DeleteIcon className="icon-delete" />
+
+                <div className="patient-name-icons">
+                  <h2>{`${patient.firstName} ${patient.lastName}`}</h2>
+                
+                <div className="icons-right">
+                  <DeleteIcon className="icon-delete" />
+                  <ExpandMoreIcon className="arrow-down" />
+                  <KeyboardArrowUpIcon className="arrow-up" />
+                </div>
+
+                </div>
               </div>
             )}
           </div>
@@ -124,3 +133,4 @@ const Form = () => {
 
 export default Form;
 
+ // <DeleteIcon className="icon-delete" />
