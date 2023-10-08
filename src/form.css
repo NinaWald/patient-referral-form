@@ -211,3 +211,18 @@
 .saved-form.closed:nth-child(5) .patient-number h1 {
   background-color: #142B58; /* Number 5 */
 }
+
+
+
+.saved-form.open .arrow-down {
+  display: none;
+}
+
+
+.saved-form.closed .arrow-up {
+  display: none;
+}
+
+.initial-form .icons-right {
+  display: none;
+}

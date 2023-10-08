@@ -7,6 +7,7 @@ import '../form.css';
 const Form = () => {
   // Initialize the state using React hooks useState for patients and form data
   const [patients, setPatients] = useState([]);
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -26,14 +27,16 @@ const Form = () => {
    // Initialize state for open and closed forms
    const [openForms, setOpenForms] = useState([]);
 
-  // Handle input change
-  const handleInputChange = (event) => {
+   // Handle input change
+   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
       [name]: value,
     });
   };
+
+
 
   const handleSubmit = (event) => {
     // the page doesn't reload after you submit the form 
@@ -70,6 +73,7 @@ const Form = () => {
       const handleDeletePatient = (index) => {
         const updatedPatients = [...patients];
         updatedPatients.splice(index, 1); // Remove the patient at the specified index
+        setOpenForms((prevOpenForms) => prevOpenForms.filter((_, i) => i !== index)); // Remove the corresponding openForms entry
         setPatients(updatedPatients);
       };
       
@@ -87,18 +91,19 @@ const Form = () => {
                   key={index}
                   className={`saved-form ${openForms[index] ? 'open' : 'closed'}`}
                 >
-                  <PatientForm
-                    formData={patient}
-                    patientNumber={index + 1}
-                    patientName={`${patient.firstName} ${patient.lastName}`}
-                    handleInputChange={handleInputChange}
-                    onDelete={() => handleDeletePatient(index)} // Pass delete function
-                    onToggle={() => toggleForm(index)} // Pass toggle function
-                  />
+               <PatientForm
+                  formData={patient}
+                  patientNumber={index + 1}
+                  patientName={`${patient.firstName} ${patient.lastName}`}
+                  handleInputChange={(event) => handleInputChange(event, index)}
+                  onDelete={() => handleDeletePatient(index)} // Pass delete function
+                  onToggle={() => toggleForm(index)} // Pass toggle function
+                />
+
                 </div>
               ))}
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="initial-form">
               {/* Input fields */}
               <PatientForm
                 formData={formData}
