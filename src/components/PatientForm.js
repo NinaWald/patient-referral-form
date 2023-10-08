@@ -6,10 +6,13 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import '../form.css'
 
-const PatientForm = ({ formData, handleInputChange, patientNumber, patientName }) => {
+const PatientForm = ({ formData, handleInputChange, patientNumber, patientName, onDelete, onToggle }) => {
 
   // Mapping of patient numbers to background colors
   const backgroundColors = {
@@ -26,10 +29,21 @@ const PatientForm = ({ formData, handleInputChange, patientNumber, patientName }
 
     return (
       <div className="form-column">
-        <div className="patient-number">
-                <h1 style={{ backgroundColor }}>{patientNumber}</h1>
-               <h2>{patientName}</h2>
-           </div>
+      <div className="patient-number">
+        
+        <h1 style={{ backgroundColor }}>{patientNumber}</h1>
+        <div className="patient-name-icons">
+        <h2>{patientName}</h2>
+        
+        <div className="icons-right">
+          <DeleteIcon className="icon-delete" onClick={onDelete} />
+          <ExpandMoreIcon className="arrow-down" onClick={onToggle} />
+          <KeyboardArrowUpIcon className="arrow-up" onClick={onToggle} />
+        </div>
+        </div>
+      </div>
+  
+
         <div className="form-field">
              <div className="input-container">
                <AccountCircleIcon className="icon" />

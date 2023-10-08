@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import PatientForm from './PatientForm';
-import DeleteIcon from '@mui/icons-material/Delete';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+
 
 import '../form.css';
 
@@ -65,72 +63,59 @@ const Form = () => {
     const toggleForm = (index) => {
         const updatedOpenForms = [...openForms];
         updatedOpenForms[index] = !updatedOpenForms[index];
+        console.log(updatedOpenForms);
         setOpenForms(updatedOpenForms);
       };
 
-  return (
-    <div className="main">
-
-      <div className="form-container">
-        <div className="patients-info">
-          <h1>Referral Patients</h1>
-          <h2>You can add up to five patients at a time</h2>
-        </div>
-        {/* Display the saved forms */}
-        <div className="saved-forms">
-        {patients.map((patient, index) => (
-          <div
-            key={index}
-            className={`saved-form ${openForms[index] ? 'open' : 'closed'}`}
-            onClick={() => toggleForm(index)}
-          >
-            {openForms[index] ? (
-              // Display open form with patient data
+      const handleDeletePatient = (index) => {
+        const updatedPatients = [...patients];
+        updatedPatients.splice(index, 1); // Remove the patient at the specified index
+        setPatients(updatedPatients);
+      };
+      
+      return (
+        <div className="main">
+          <div className="form-container">
+            <div className="patients-info">
+              <h1>Referral Patients</h1>
+              <h2>You can add up to five patients at a time</h2>
+            </div>
+            {/* Display the saved forms */}
+            <div className="saved-forms">
+              {patients.map((patient, index) => (
+                <div
+                  key={index}
+                  className={`saved-form ${openForms[index] ? 'open' : 'closed'}`}
+                >
+                  <PatientForm
+                    formData={patient}
+                    patientNumber={index + 1}
+                    patientName={`${patient.firstName} ${patient.lastName}`}
+                    handleInputChange={handleInputChange}
+                    onDelete={() => handleDeletePatient(index)} // Pass delete function
+                    onToggle={() => toggleForm(index)} // Pass toggle function
+                  />
+                </div>
+              ))}
+            </div>
+            <form onSubmit={handleSubmit}>
+              {/* Input fields */}
               <PatientForm
-                formData={patient}
-                patientNumber={index + 1}
-                patientName={`${patient.firstName} ${patient.lastName}`}
+                formData={formData}
+                handleInputChange={handleInputChange}
+                patientNumber={patientNumber} // Pass patientNumber to the form
+                patientName={patientName} // Pass patientName to the form
               />
-            ) : (
-              // Display closed form with patient number and name
-              <div className="patient-number">
-                <h1>{index + 1}</h1>
-
-                <div className="patient-name-icons">
-                  <h2>{`${patient.firstName} ${patient.lastName}`}</h2>
-                
-                <div className="icons-right">
-                  <DeleteIcon className="icon-delete" />
-                  <ExpandMoreIcon className="arrow-down" />
-                  <KeyboardArrowUpIcon className="arrow-up" />
-                </div>
-
-                </div>
+              <div className="new-patient" onClick={handleSubmit}>
+                <h4>+ ADD PATIENT</h4>
               </div>
-            )}
+              <div className="submit-button">SEND REFERRALS</div>
+            </form>
           </div>
-        ))}
-      </div>
-        <form onSubmit={handleSubmit}>
-          {/* Input fields */}
-          <PatientForm
-            formData={formData}
-            handleInputChange={handleInputChange}
-            patientNumber={patientNumber} // Pass patientNumber to the form
-            patientName={patientName}     // Pass patientName to the form
-          />
-          <div className="new-patient" onClick={handleSubmit}>
-            <h4>+ ADD PATIENT</h4>
-          </div>
-          <div className="submit-button">SEND REFERRALS</div>
-        </form>
-      </div>
-
+        </div>
+      );
+    };
     
-    </div>
-  );
-};
-
-export default Form;
-
- // <DeleteIcon className="icon-delete" />
+    export default Form;
+  
+  

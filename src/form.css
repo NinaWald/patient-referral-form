@@ -33,7 +33,7 @@
     background-color: #25A575;
     color: white;
     width: 40px;
-    height: 64px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,12 +69,14 @@
     color:  #B8C7CC;
   }
 
-  .icon-delete, .arrow-up, .arrow-down {
+   .arrow-up, .arrow-down {
     color: #B8C7CC;
-    margin-right: 8px;
+   
+    margin-left: 8px;
   }
-
-  
+  .icon-delete {
+    color: #63769d;
+  }
   .input-container {
     flex: 1;
     display: flex; /* Add display flex to align icon and input */
@@ -139,16 +141,33 @@
  }
 
  .saved-form.closed {
-    margin-bottom: 8px;
+    display: flex; /* Use flex display */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: flex-start; /* Align items to the start (left) */
     background-color: white;
     border-radius: 4px;
+    height: 60px;
+    margin-top: 5px;
  }
 
  .saved-form.closed .patient-number h1 {
   border-bottom-left-radius: 5px;
 }
 
+.saved-form.closed .form-field {
+  display: none; /* Hide form fields when the form is open */
+}
 
+.saved-form.closed .adress-notes {
+  display: none; /* Hide form fields when the form is open */
+}
+
+.saved-form.closed .form-column {
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  height: 30px;
+}
 
  .main {
   display: flex;
