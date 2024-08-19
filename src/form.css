@@ -1,165 +1,154 @@
 
 .form-column {
-    display: grid; /* Change from flex to grid */
-    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-    gap: 16px; /* Add gap between columns */
-    width: 782px;
-    padding-bottom: 20px;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 4px;
-    margin-bottom: 20px;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 782px; /* Specific width for desktops */
+  padding-bottom: 20px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
 
+.patients-info {
+  color: #0B2B5B;
+  font-size: 10px;
+  padding: 40px;
+}
 
-  .patients-info {
-    color: #0B2B5B;
-    font-size: 10px;
-    padding: 40px;
-  }
+.patient-number {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: span 2;
+  cursor: pointer;
+}
 
-  .patient-number {
-    display: flex;
-   
-    justify-content: flex-start; /*Align items to the left within the row */
-    align-items: center;
-    grid-column: span 2; /* Span 2 columns in the grid */
-    cursor: pointer;
-  }
-  
-  .patient-number h1 {
-    font-size: 26px; /* Adjust the font size as needed */
-    margin: 0;
-    background-color: #25A575;
-    color: white;
-    width: 40px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-left-radius: 5px;
-    
-  }
-  
-  .patient-number h2 {
-    font-size: 20px; /* Adjust the font size as needed */
-    margin-left: 20px;
-    color: #3A719B;
-  
-  }
-  
-  
-  .form-field {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 8px 0;
-    margin-left: 20px;
-    margin-right: 20px;
-   
-  
-  }
+.patient-number h1 {
+  font-size: 26px;
+  margin: 0;
+  background-color: #25A575;
+  color: white;
+  width: 40px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+}
 
-  .form-field, ::placeholder {
-    color: #3A719B;
-  }
-  
-  .icon {
-    margin-right: 8px;
-    color:  #B8C7CC;
-  }
+.patient-number h2 {
+  font-size: 20px;
+  margin-left: 20px;
+  color: #3A719B;
+}
 
-   .arrow-up, .arrow-down {
-    color: #B8C7CC;
-   
-    margin-left: 8px;
-  }
-  .icon-delete {
-    color: #63769d;
-  }
-  .input-container {
-    flex: 1;
-    display: flex; /* Add display flex to align icon and input */
-    align-items: center; /* Center align icon and input vertically */
-    border: none;
-    padding: 5px;
-    
+.form-field {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
-  }
-  
-  .input-field {
-    flex: 1;
-    border: none;
-    width: 250px;
-    color:  #3A719B;
-   
-  }
+.form-field, ::placeholder {
+  color: #3A719B;
+}
 
-  .submit-button {
-    width: 782px;
-    height: 48px;
-    border-radius: 34.5px;
-    background: #0B2B5B;
-    color: #FFFFFF; /* Text color */
-    font-size: 18px; /* Adjust font size as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 150px;
-    cursor: pointer; /* Add pointer cursor on hover */
-  }
+.icon {
+  margin-right: 8px;
+  color:  #B8C7CC;
+}
 
-  .form-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    height: 800px;
-  }
-  
-  
- .adress-notes {
-    display: grid;
-    grid-column: span 2;
-    gap: 16px;
-    
- }
+.arrow-up, .arrow-down {
+  color: #B8C7CC;
+  margin-left: 8px;
+}
 
- .new-patient {
-    color: #0B2B5B;
-    cursor: pointer;
-    margin: 50px;
- }
+.icon-delete {
+  color: #63769d;
+}
 
- .saved-forms {
+.input-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 5px;
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  width: 100%; /* Change from fixed width to 100% */
+  color:  #3A719B;
+}
+
+.submit-button {
+  width: 100%; /* Change from fixed width to 100% */
+  height: 48px;
+  border-radius: 34.5px;
+  background: #0B2B5B;
+  color: #FFFFFF;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 150px;
+  cursor: pointer;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  height: auto; /* Adjust to auto height */
+}
+
+.adress-notes {
+  display: grid;
+  grid-column: span 2;
+  gap: 16px;
+}
+
+.new-patient {
+  color: #0B2B5B;
+  cursor: pointer;
+  margin: 50px;
+}
+
+.saved-forms {
   display: grid;
   grid-template-columns: 1fr;
-  width: 782px;
-  margin: 5px;
   
- }
+  margin: 5px;
+}
 
- .saved-form.closed {
-    display: flex; /* Use flex display */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: flex-start; /* Align items to the start (left) */
-    background-color: white;
-    border-radius: 4px;
-    height: 60px;
-    margin-top: 5px;
- }
+.saved-form.closed {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 4px;
+  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
- .saved-form.closed .patient-number h1 {
+.saved-form.closed .patient-number h1 {
   border-bottom-left-radius: 5px;
 }
 
 .saved-form.closed .form-field {
-  display: none; /* Hide form fields when the form is open */
+  display: none;
 }
 
 .saved-form.closed .adress-notes {
-  display: none; /* Hide form fields when the form is open */
+  display: none;
 }
 
 .saved-form.closed .form-column {
@@ -169,55 +158,50 @@
   height: 30px;
 }
 
- .main {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
- }
+}
 
- .patient-name-icons {
+.patient-name-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 720px;
- }
+  width: 100%; /* Change from fixed width to 100% */
+}
 
- .icons-right {
+.icons-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
- }
+}
 
-
- /* Add specific background colors for patient numbers */
+/* Specific background colors for patient numbers */
 .saved-form.closed:nth-child(1) .patient-number h1 {
-  background-color: #25A575; /* Number 1 */
+  background-color: #25A575;
 }
 
 .saved-form.closed:nth-child(2) .patient-number h1 {
-  background-color: #2595A5; /* Number 2 */
+  background-color: #2595A5;
 }
 
 .saved-form.closed:nth-child(3) .patient-number h1 {
-  background-color: #3A719B; /* Number 3 */
+  background-color: #3A719B;
 }
 
 .saved-form.closed:nth-child(4) .patient-number h1 {
-  background-color: #254B7A; /* Number 4 */
+  background-color: #254B7A;
 }
 
 .saved-form.closed:nth-child(5) .patient-number h1 {
-  background-color: #142B58; /* Number 5 */
+  background-color: #142B58;
 }
-
-
 
 .saved-form.open .arrow-down {
   display: none;
 }
-
 
 .saved-form.closed .arrow-up {
   display: none;
@@ -225,4 +209,56 @@
 
 .initial-form .icons-right {
   display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .form-column {
+    width: 100%; /* Full width on mobile */
+    grid-template-columns: 1fr; /* Single column layout on mobile */
+    
+  }
+
+  .form-field {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .patient-number h1 {
+      width: 30px;
+      height: 52px;
+      font-size: 22px;
+  }
+
+  .patient-number h2 {
+      font-size: 18px;
+  }
+
+  .patients-info {
+      padding: 20px;
+      font-size: 8px;
+  }
+
+  .submit-button {
+      font-size: 16px;
+  }
+
+  .new-patient {
+      margin: 30px;
+  }
+
+  .saved-form.closed {
+    height: 50px;
+    margin-bottom: 10px; /* Add gap on mobile */
+    
+  }
+
+  .saved-form.open {
+    margin-bottom: 20px; /* Add gap on mobile */
+}
+
+.saved-forms {
+  width: 100%; /* Change from fixed width to 100% */
+
+}
 }
