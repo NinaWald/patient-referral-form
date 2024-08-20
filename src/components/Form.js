@@ -31,8 +31,8 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Check if the number of patients is already 5
-    if (patients.length >= 5) {
+    // Check if the number of patients is already 4
+    if (patients.length >= 4) {
       setNotification('You cannot add more than 5 patients.');
       return;
     }
@@ -98,8 +98,7 @@ const Form = () => {
           ))}
         </div>
 
-        {/* Notification message */}
-        {notification && <div className="notification">{notification}</div>}
+        
 
         {/* Only render the form if there are less than 5 patients */}
         {patients.length < 5 && (
@@ -111,6 +110,8 @@ const Form = () => {
               patientName={patientName}
             />
             <div className="new-patient" onClick={handleSubmit}>
+              {/* Notification message */}
+              {notification && <div className="notification">{notification}</div>}
               <h4>+ ADD PATIENT</h4>
             </div>
           </form>
